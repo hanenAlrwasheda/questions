@@ -33,6 +33,8 @@ Template.page.helpers({
 });
 Template.page.events({
   'click .prev'(event, instance) {
+    reset(); //cleaning current card from chosen answers
+    // remarkChosenAnswer();
     const questionIndex = instance.questionIndex;
     if (questionIndex.get() !== 0) {
       questionIndex.set(questionIndex.get() - 1);
@@ -46,6 +48,8 @@ Template.page.events({
     }
   },
   'click .next'(event, instance) {
+    reset(); //cleaning current card from chosen answers
+    // remarkChosenAnswer();
     const questionIndex = instance.questionIndex;
     if (questionIndex.get() !== data.length - 1) {
       questionIndex.set(questionIndex.get() + 1);
@@ -64,5 +68,26 @@ Template.page.events({
       op.classList.remove('selected')
     });
     $(event.target).addClass('selected') //set color to selected item
+    chosenAnswers[instance.questionIndex.get()] = $(event.target).index()  //saving chosen Answers
+    console.log(chosenAnswers);
   }
 });
+
+let chosenAnswers = [];
+
+/* function remarkChosenAnswer() {
+  // $('.options').children().toArray()[chosenAnswers[Template.instance().questionIndex.get()]].classList.add('selected');
+  // console.log(chosenAnswers);
+  // console.log(chosenAnswers[Template.instance().questionIndex.get()]);
+  chosenAnswerIndex = chosenAnswers[Template.instance().questionIndex.get()]
+  const cl = $('.options').children().toArray()[0].classList
+  cl.add('selected')
+  // console.log(cl);
+} */
+
+function reset() {
+  console.log('resetting');
+  $('.options').children().toArray().forEach(op => {
+    op.classList.remove('selected')
+  });
+}
