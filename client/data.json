@@ -1,0 +1,38 @@
+[
+    {
+        "question": "1 + 1 = ?",
+        "options": [
+            "2",
+            "3",
+            "5"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "5 + 3 = ?",
+        "options": [
+            "22",
+            "3",
+            "8"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "10 - 1 = ?",
+        "options": [
+            "2",
+            "0",
+            "9"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "What is the name of the biggest country in the world?",
+        "options": [
+            "India",
+            "China",
+            "Russia"
+        ],
+        "answer": 2
+    }
+]

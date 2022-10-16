@@ -1,0 +1,19 @@
+<template name="page">
+  <div class="wrapper">
+    <div class="content">
+      <button class="prev btn">&#60;</button>
+      <div class="card">
+        <p class="question">{{ question }}</p>
+        <ul class="options">
+          {{ #each op in currentQuestionOptions }}
+          <li class="option">{{op}}</li>
+          {{ /each }}
+        </ul>
+      </div>
+      <button class="next btn">&#62;</button>
+    </div>
+    <div class="progress">
+      <p>{{ currentQuestion }} / {{ totalQuestionNumber }}</p>
+    </div>
+  </div>
+</template>
